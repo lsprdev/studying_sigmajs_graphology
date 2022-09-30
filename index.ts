@@ -12,10 +12,10 @@ const data =
     ["it-cmf", "business process management", "bpm", "software development", "higher education", "competency", "project management"], 
     ["it-cmf", "capability", "competency", "graph", "information systems", "information systems and technology"], 
     ["it-cmf", "capability", "competency", "graph", "information systems", "information systems and technology"], 
-    ["informatioin systems and technology", "information systems and technology competency", "competency grammar", "backus-naur form"], 
+    ["information systems and technology", "information systems and technology competency", "competency grammar", "backus-naur form"], 
     ["competency", "information systems", "information systems and technology competency", "competency mapping"], 
     ["modelos de evolução", "estádios de crescimento", "tecnologias e sistemas de informação", 
-    "modelos de maturidade", "organization evolution model", "stages of growth", "information systems and technologies", "maturity models"]
+    "modelos de maturidade", "organization evolution model", "stages of growth", "information systems and technology", "maturity models"]
 ];
 
 
@@ -88,7 +88,7 @@ for (let paper1 of keywords) {
 
 for (let elemento of listaFinal) {
     console.log(`key: ${elemento.key} | origem: ${elemento.source} | destino: ${elemento.target} | peso: ${elemento.weight}`);
-    graph.addEdge(elemento.source, elemento.target, { size: elemento.weight });
+    graph.addEdge(elemento.source, elemento.target, { size: elemento.weight*2 });
     // Stop the layout
     if(elemento.weight >= 3) {
         graph.setEdgeAttribute(elemento.source, elemento.target, "color", "#727EE0");
