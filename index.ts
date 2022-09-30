@@ -24,10 +24,9 @@ const graph = new Graph();
 
 // The parameters are the same as for the synchronous version, minus `iterations` of course
 const layout = new FA2Layout(graph, {
-    settings: { gravity: 5, scalingRatio: 1, strongGravityMode: false, barnesHutOptimize: true, barnesHutTheta: 0.5   },
+    settings: { gravity: 8, scalingRatio: 13, strongGravityMode: false, barnesHutOptimize: true, barnesHutTheta: 0.4   },
     getEdgeWeight: 'weight',
 });
-
 
 // To start the layout
 layout.start();
@@ -94,7 +93,7 @@ for (let elemento of listaFinal) {
     if(elemento.weight >= 3) {
         graph.setEdgeAttribute(elemento.source, elemento.target, "color", "#727EE0");
     }
-    setTimeout(() => { layout.stop(); }, 1000);
+    setTimeout(() => { layout.stop(); }, 80);
 }
 
 // graph.addEdge("it-cmf", "erp", { size: 3 })
