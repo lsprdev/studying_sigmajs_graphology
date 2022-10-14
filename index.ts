@@ -18,7 +18,6 @@ const data =
     "modelos de maturidade", "organization evolution model", "stages of growth", "information systems and technology", "maturity models"]
 ];
 
-
 const container = document.getElementById("sigma-container") as HTMLElement;
 const graph = new Graph();
 
@@ -32,7 +31,7 @@ const layout = new FA2Layout(graph, {
 layout.start();
 
 // Looping that creates the nodes 
-data.flat().map((item, index) => {
+data.map((item, index) => {
     if (graph.nodes().includes(item) == false) {
         graph.addNode(item, { 
             label: item, 
@@ -95,8 +94,3 @@ for (let elemento of listaFinal) {
     }
     setTimeout(() => { layout.stop(); }, 80);
 }
-
-// graph.addEdge("it-cmf", "erp", { size: 3 })
-// graph.addEdge("bpm", "erp", { size: 3 })
-
-// graph.setEdgeAttribute(elemento.source, elemento.target, "color", "#727EE0");
